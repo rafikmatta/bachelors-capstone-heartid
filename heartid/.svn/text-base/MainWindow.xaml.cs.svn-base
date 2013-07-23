@@ -1,0 +1,409 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System.Drawing;
+using System.IO;
+using System.Reflection;
+using System.Globalization;
+using System.IO.Ports;
+using System.Threading;
+using System.Windows.Threading;
+using System.Windows.Forms;
+using System.Windows.Forms.Integration;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Drawing.Drawing2D;
+
+namespace Heart_ID_Csharp
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+
+
+
+    public partial class MainWindow : Window
+    {
+
+        /* Main Class Calls for the program*/
+        algorithm a = new algorithm();
+        comm c;
+        WindowsFormsHost host = new WindowsFormsHost();
+        /***********************************/
+
+        DataProcess d;
+        private int id = 5;
+        private int temp_id;
+        StreamWriter resultlog;
+        StreamWriter resultlog1;
+        StreamWriter resultlog2;
+
+        Boolean newdat = false;
+        bool graphing_done;
+        bool function_done;
+
+        private int operation = 0;
+        public int[] results = new int[3];
+
+        public delegate void methodcall();           
+        private bool not_stop = true;
+        private string[] name = new string[1000000];
+
+        /*Graphing variables*/ 
+
+        public double[] ecg = new double[1280];
+        private int ecg_counter = 0;
+
+        /*Graphing with Writeable Bitmap*/
+        Window w;
+        static Chart ch;
+        static TimeSpan last_render_time;
+        bool stop_graphing;
+        
+        Thread t1;
+        Thread t2;
+        Thread t3;
+
+        //ComboBox Fillers
+        public enum Situation { Resting, Engaged, Active };
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, EventArgs e)
+        {
+            a.train();
+            identify.IsEnabled = false;
+            enrol.IsEnabled = false;
+            SetDefaults();
+            SetControlState();
+            c = new comm(cboPort);
+            d = new DataProcess(c);
+            name[1] = "null";
+            name[2] = "null";
+            name[3] = "null";
+            name[4] = "null";
+            name[5] = "null";
+           
+
+
+        }
+
+       
+
+        private void SetDefaults()
+        {
+            cboPort.SelectedIndex = 0;
+        }
+
+        private void SetControlState()
+        {
+            cmdSend.IsEnabled = false;
+        }
+
+        private void listBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           // textBox3.Text = listBox1.SelectedItem.ToString();
+
+        }
+
+        private void identify_f()
+        {
+
+            function_done = false;
+            string result1 = "";
+            string result2 = "";
+            string result3 = "";
+
+            ecg = d.data();
+            results = a.identification(ecg);
+
+                //a.enrollment(ecg, id);
+                result1 = name[results[0]];
+                result2 = name[results[1]];
+                result3 = name[results[2]];
+                rank1.Clear();
+                rank2.Clear();
+                rank3.Clear();
+                rank1.AppendText("1:" + result1);
+                rank2.AppendText("2:" + result2);
+                rank3.AppendText("3:" + result3);
+                //rtbResults.AppendText("Identify Completed Done");
+                //rtbResults.ScrollToEnd();    
+                if (this.not_stop) resultlog.WriteLine(result1);
+                if (this.not_stop) resultlog1.WriteLine(result2);
+                if (this.not_stop) resultlog2.WriteLine(result3);
+                function_done = true;
+
+        }
+
+        private void enrol_f()
+        {
+
+            function_done = false;
+            ecg = d.data();
+            a.enrollment(ecg, id);
+            function_done = true;
+        }
+
+        private void graphing()
+        {
+            w = new Window();
+            w.Width = 1024;
+            w.Height = 200;
+            w.Show();
+            graphing_done = false;
+            PointF[] values = new PointF[1280];
+
+            for (int n = 0; n < d.getGraphData().Length; ++n)
+            {
+                values[n] = new PointF((float)n, (float)d.getGraphData()[n]);
+            }
+            
+            ch = new Chart(w, 1280, values);
+            w.Content = ch;
+            last_render_time = new TimeSpan();
+            CompositionTarget.Rendering += new EventHandler(CompositionTarget_Rendering);
+            graphing_done = true;
+            d.setGraphingState(graphing_done);
+            
+            
+        }
+
+        static void CompositionTarget_Rendering(object sender, EventArgs e)
+        {
+                // ensure we only call render() once per frame
+                if (last_render_time != ((RenderingEventArgs)e).RenderingTime)
+                {
+                ch.render();
+                last_render_time = ((RenderingEventArgs)e).RenderingTime;
+                }
+       }
+
+        #region ClickEvents
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            enrol.Dispatcher.BeginInvokeShutdown(DispatcherPriority.SystemIdle);
+            //a.save();
+            //t.Abort();
+            Close();
+        }
+
+        private void connect_Click(object sender, RoutedEventArgs e)
+        {
+            c.DisplayWindow = rtbDisplay;
+            c.PortName = cboPort.Text;
+            c.OpenPort();
+            connect.IsEnabled = false;
+            cmdSend.IsEnabled = true;
+            identify.IsEnabled = true;
+            Thread.Sleep(1280);
+            enrol.IsEnabled = true;
+
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            a.save();
+
+            BinaryFormatter bFormatter = new BinaryFormatter();
+
+            Stream stream = File.Open("name", FileMode.OpenOrCreate);
+            bFormatter.Serialize(stream, name);
+            stream.Close();
+
+            stream = File.Open("name_id", FileMode.OpenOrCreate);
+            bFormatter.Serialize(stream, id);
+            stream.Close();
+
+            rtbResults.AppendText("Save Done\n");
+        }
+
+        private void load_Click(object sender, RoutedEventArgs e)
+        {
+            a.load();
+
+            BinaryFormatter bFormatter = new BinaryFormatter();
+
+            Stream stream = File.Open("name", FileMode.Open);
+            name = (string[])bFormatter.Deserialize(stream);
+            stream.Close();
+
+            stream = File.Open("name_id", FileMode.Open);
+            id = (int)bFormatter.Deserialize(stream);
+            stream.Close();
+
+            rtbResults.AppendText("Load Done\n");
+
+            for (int i = 6; i <= id; i++)
+            {
+                listBox1.Items.Add(name[i]);
+            }
+            load.IsEnabled = false;
+
+        }
+
+        private void portClose_Click(object sender, RoutedEventArgs e)
+        {
+            c.ClosePort();
+            connect.IsEnabled = true;
+        } 
+        
+        private void enrol_stop_Click(object sender, RoutedEventArgs e)
+        {
+            not_stop = false;
+
+            if (operation == 0)
+            {
+                rtbResults.AppendText("Enroll Done\n");
+                rtbResults.ScrollToEnd();
+                enrol.IsEnabled = true;
+                identify.IsEnabled = true;
+                id = temp_id;
+            }
+
+        }
+
+        private void identify_stop_Click(object sender, RoutedEventArgs e)
+        {
+            not_stop = false;
+
+            if (operation == 1)
+            {
+                identify.IsEnabled = true;
+                enrol.IsEnabled = true;
+
+                resultlog.Close();
+                resultlog1.Close();
+                resultlog2.Close();
+                rtbResults.AppendText("Identify Stop\n");
+                rtbResults.ScrollToEnd();
+            }
+        }
+
+        private void graph_Click(object sender, RoutedEventArgs e)
+        {
+            d.getData();
+            t1 = new Thread(graphing);
+            t1.Start();
+            
+        }
+
+        private void stop_graph_Click(object sender, RoutedEventArgs e)
+        {
+            stop_graphing = true;
+            w.Hide();
+        }
+
+        private void identify_Click(object sender, RoutedEventArgs e)
+        {
+            operation = 1;
+            identify.IsEnabled = false;
+            enrol.IsEnabled = false;
+
+            string temp = textBox3.GetLineText(0);
+            if (temp != "")
+            {
+                textBox3.Clear();
+                resultlog = new StreamWriter(temp + "1.txt");
+                resultlog1 = new StreamWriter(temp + "2.txt");
+                resultlog2 = new StreamWriter(temp + "3.txt");
+                not_stop = true;
+                t2 = new Thread(identify_f);
+            }
+            else
+            {
+                string messageBoxText = "Please enter a name!";
+                string caption = "Error";
+                System.Windows.MessageBox.Show(messageBoxText, caption);
+            }
+
+        }
+
+        private void enrol_Click(object sender, RoutedEventArgs e)
+        {
+            operation = 0;
+            string temp = textBox3.GetLineText(0);
+            if (temp != "")
+            {
+                for (int i = 5; i <= id; i++)
+                {
+                    if (name[i] == temp)
+                    {
+                        string message = "Name already exist, re-enroll " + temp + "?";
+                        MessageBoxResult result = System.Windows.MessageBox.Show(message, "Duplicate Name", System.Windows.MessageBoxButton.YesNo,
+                                System.Windows.MessageBoxImage.Question);
+                        if (result == MessageBoxResult.Yes)
+                        {
+                            temp_id = id;
+                            id = i - 1;
+                            break;
+                        }
+                        else if (result == MessageBoxResult.No)
+                        {
+                            string messageBoxText = "Please enter another name!";
+                            string caption = "Error";
+                            System.Windows.MessageBox.Show(messageBoxText, caption);
+                            return;
+                        }
+                    }
+                }
+
+                id++;
+                textBox3.Clear();
+
+                enrol.IsEnabled = false;
+                identify.IsEnabled = false;
+                not_stop = true;
+                t3 = new Thread(enrol_f);
+            }
+            else
+            {
+                string messageBoxText = "Please enter a name!";
+                string caption = "Error";
+                System.Windows.MessageBox.Show(messageBoxText, caption);
+
+            }
+        }
+
+        private void delete_Click(object sender, RoutedEventArgs e)
+        {
+            string temp = listBox1.SelectedItem.ToString();
+            for (int i = 5; i <= id; i++)
+            {
+                if (name[i] == temp)
+                {
+                    a.delete((double)i);
+                    listBox1.Items.Clear();
+                    name[i] = "";
+                    for (int x = 6; x <= id; x++)
+                    {
+                        listBox1.Items.Add(name[x]);
+                    }
+                }
+            }
+    
+        }
+
+        #endregion
+
+        
+
+
+
+    }
+
+    public delegate 
+}

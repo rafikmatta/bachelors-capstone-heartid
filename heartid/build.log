@@ -1,0 +1,8 @@
+MATLAB:I18n:InconsistentLocale - The system locale setting, English (United States)_United States.1252, is different from the user locale setting, English (Canada)_Canada.1252. 
+mcc -W 'dotnet:dotnet,dotnetclass,0.0,private' -d 'D:\School_Work\Design_Project\Conversion_individual\dotnet\' -T 'link:lib' 'class{dotnetclass:D:\School_Work\Design_Project\Conversion_individual\process.m,D:\School_Work\Design_Project\Conversion_individual\dlda.m,D:\School_Work\Design_Project\Conversion_individual\classify_input.m,D:\School_Work\Design_Project\Conversion_individual\F_EigenSys.m,D:\School_Work\Design_Project\Conversion_individual\addtogallery.m,D:\School_Work\Design_Project\Conversion_individual\addtoid.m,D:\School_Work\Design_Project\Conversion_individual\projection.m,D:\School_Work\Design_Project\Conversion_individual\delete_gallery.m,D:\School_Work\Design_Project\Conversion_individual\delete_id.m,D:\School_Work\Design_Project\Conversion_individual\authentication.m,D:\School_Work\Design_Project\Conversion_individual\claim_gallery.m}'  
+Warning: Name is nonexistent or not a directory: C:\Program 
+Files\MATLAB\R2008b\toolbox\compiler\patch.  
+Warning: Name is nonexistent or not a directory: C:\Program 
+Files\MATLAB\R2008b\toolbox\compiler\patch.  
+Warning: Name is nonexistent or not a directory: C:\Program 
+Files\MATLAB\R2008b\toolbox\compiler\patch.  

@@ -1,0 +1,5 @@
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\graphing\bin\Release\ConsoleApplication1.exe
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\graphing\bin\Release\ConsoleApplication1.pdb
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\graphing\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\graphing\obj\x86\Release\ConsoleApplication1.exe
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\graphing\obj\x86\Release\ConsoleApplication1.pdb

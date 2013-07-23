@@ -1,0 +1,11 @@
+﻿<Window x:Class="Heart_ID_Csharp.Browser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Browser" Height="666" Width="1008">
+    <Grid>
+        <WebBrowser HorizontalAlignment="Left" Margin="12,41,0,0" Name="webBrowser1" VerticalAlignment="Top" Height="574" Width="962" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="76,12,0,0" Name="address_field" VerticalAlignment="Top" Width="576" />
+        <Label Content="Address:" Height="28" HorizontalAlignment="Left" Margin="21,10,0,0" Name="label1" VerticalAlignment="Top" Width="58" />
+        <Button Content="GO" Height="22" HorizontalAlignment="Left" Margin="664,13,0,0" Name="go_button" VerticalAlignment="Top" Width="46" Click="go_button_Click" />
+    </Grid>
+</Window>

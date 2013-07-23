@@ -1,0 +1,139 @@
+﻿using System;
+using System.Windows;
+using System.Windows.Media;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Media.Imaging;
+
+
+
+namespace Heart_ID_Csharp
+{
+    
+    class ChartCore : DrawingVisual
+    {
+        WriteableBitmap writeable_bitmap;
+
+        int WIDTH = 1400;
+        int HEIGHT = 1400;
+
+        int COUNT = 0;
+        PointF[] values;
+
+        const float pen_thickness = 5;
+        float half_pen_thickness = pen_thickness / 2.0f;
+
+        System.Drawing.Graphics bitmapGraphics;
+
+        System.Drawing.Pen pen;
+
+
+        public ChartCore(Window w, int count, PointF[] value)
+        {
+            int pixel_count = WIDTH * HEIGHT;
+
+            System.Drawing.Color c = System.Drawing.Color.CornflowerBlue;
+            pen = new System.Drawing.Pen(c, pen_thickness);
+
+            //values = new PointF[COUNT];
+            values = value;
+            COUNT = count;
+            //float x = 0;
+
+            //for (int n = 0; n < COUNT; ++n)
+            //{
+            //    values[n] = new PointF(x, (float)data);
+            //    x += 5;
+            //}
+
+            // get DPI for this window
+            System.Windows.Media.Matrix m = PresentationSource.FromVisual(w).CompositionTarget.TransformToDevice;
+            double dpi_x = m.M11 * 96.0;
+            double dpi_y = m.M22 * 96.0;
+
+            writeable_bitmap = new WriteableBitmap(WIDTH, HEIGHT, dpi_x, dpi_y, PixelFormats.Pbgra32, null);
+
+            System.Drawing.Bitmap b = new Bitmap(WIDTH, HEIGHT, WIDTH * 4, System.Drawing.Imaging.PixelFormat.Format32bppPArgb, writeable_bitmap.BackBuffer);
+
+            bitmapGraphics = System.Drawing.Graphics.FromImage(b);
+            bitmapGraphics.SmoothingMode = SmoothingMode.HighQuality;
+            bitmapGraphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+            bitmapGraphics.CompositingMode = CompositingMode.SourceOver;
+            bitmapGraphics.CompositingQuality = CompositingQuality.HighQuality;
+
+            DrawingContext dc = RenderOpen();
+            dc.DrawImage(writeable_bitmap, new Rect(0, 0, WIDTH, HEIGHT));
+            dc.Close();
+        }
+
+        int index = 0;
+
+        public void render()
+        {
+            writeable_bitmap.Lock();
+
+            bitmapGraphics.DrawLine(pen, values[index], values[index + 1]);
+
+            int width = (int)(Math.Abs(values[index + 1].X - values[index].X) + pen_thickness + 4);
+            int height = (int)(Math.Abs(values[index + 1].Y - values[index].Y) + pen_thickness + 4);
+
+            int startx = (int)Math.Max((int)Math.Min(values[index + 1].X, values[index].X) - half_pen_thickness - 2, 0);
+            int starty = (int)Math.Max((int)Math.Min(values[index + 1].Y, values[index].Y) - half_pen_thickness - 2, 0);
+
+            bitmapGraphics.Flush(FlushIntention.Flush);
+            writeable_bitmap.AddDirtyRect(new Int32Rect(startx, starty, width, height));
+
+            index++;
+
+            if (index + 2 >= COUNT)
+            {
+                index = 0;
+                bitmapGraphics.Clear(System.Drawing.Color.White);
+                writeable_bitmap.AddDirtyRect(new Int32Rect(0, 0, WIDTH, HEIGHT));
+            }
+
+            writeable_bitmap.Unlock();
+        }
+
+        public delegate void WindowElement(Window args);
+    }
+
+
+
+    class Chart : UIElement
+    {
+        ContainerVisual container;
+        ChartCore core;
+
+        public Chart(Window w, int COUNT, PointF[] value)
+        {
+            container = new ContainerVisual();
+
+            RenderOptions.SetBitmapScalingMode(this, BitmapScalingMode.NearestNeighbor);
+            RenderOptions.SetEdgeMode(this, EdgeMode.Aliased);
+
+            core = new ChartCore(w,COUNT,value);
+
+            container.Children.Add(core);
+            AddVisualChild(container);
+        }
+
+        public void render()
+        {
+            core.render();
+        }
+
+        protected override int VisualChildrenCount
+        {
+            get { return 1; }
+        }
+
+        protected override Visual GetVisualChild(int index)
+        {
+            return container;
+        }
+    }
+}
+
+
+

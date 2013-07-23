@@ -1,0 +1,116 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using ZedGraph;
+namespace Heart_ID_Csharp
+{
+    public partial class ZedGraphUserControl : UserControl
+    {
+        // Starting time in milliseconds
+        //int tickStart = 0;
+        private double data;
+        private double xaxis;
+
+        public void SetData(double point)
+        {
+            data = point;
+        }
+        public void SetXAxis(double x)
+        {
+            xaxis = x;
+        }
+
+        public ZedGraphUserControl()
+        {
+            InitializeComponent();
+        }
+
+        private void ZedGraphUserControl_Resize(object sender, EventArgs e)
+        {
+            SetSize();
+        }
+
+        // Set the size and location of the ZedGraphControl
+        private void SetSize()
+        {
+            // Control is always 10 pixels inset from the client rectangle of the form
+            Rectangle formRect = this.ClientRectangle;
+            formRect.Inflate(-10, -10);
+
+            if (zgcGraph.Size != formRect.Size)
+            {
+                zgcGraph.Location = formRect.Location;
+                zgcGraph.Size = formRect.Size;
+            }
+        }
+
+        private void ZedGraphUserControl_Load(object sender, EventArgs e)
+        {
+            GraphPane myPane = zgcGraph.GraphPane;
+            myPane.Title.Text = "ECG1";
+            myPane.XAxis.Title.Text = "Time, Seconds";
+            myPane.YAxis.Title.Text = "Sample Potential, Volts";
+
+            // Save 1200 points.  At 50 ms sample rate, this is one minute
+            // The RollingPointPairList is an efficient storage class that always
+            // keeps a rolling set of point data without needing to shift any data values
+            RollingPointPairList list = new RollingPointPairList(1280);
+
+            // Initially, a curve is added with no data points (list is empty)
+            // Color is blue, and there will be no symbols
+            LineItem curve = myPane.AddCurve("Voltage", list, Color.Blue, SymbolType.None);
+
+            // Just manually control the X axis range so it scrolls continuously
+            // instead of discrete step-sized jumps
+            myPane.XAxis.Scale.Min = 0;
+            myPane.XAxis.Scale.Max = 1000;
+            myPane.XAxis.Scale.MinorStep = 1;
+            myPane.XAxis.Scale.MajorStep = 1;
+
+            // Scale the axes
+            zgcGraph.AxisChange();
+
+        }
+
+
+        public void graph()
+        {
+            // Make sure that the curvelist has at least one curve
+            if (zgcGraph.GraphPane.CurveList.Count <= 0)
+                return;
+
+            // Get the first CurveItem in the graph
+            LineItem curve = zgcGraph.GraphPane.CurveList[0] as LineItem;
+            if (curve == null)
+                return;
+
+            // Get the PointPairList
+            IPointListEdit list = curve.Points as IPointListEdit;
+            // If this is null, it means the reference at curve.Points does not
+            // support IPointListEdit, so we won't be able to modify it
+            if (list == null)
+                return;
+
+
+            // Graph a point
+            list.Add(xaxis, data);
+
+            //// Keep the X scale at a rolling 
+            //// major step between the max X value and the end of the axis
+            Scale xScale = zgcGraph.GraphPane.XAxis.Scale;             
+            xScale.Max = xaxis + xScale.MajorStep;
+            xScale.Min = xScale.Max - 1000;
+
+            // Make sure the Y axis is rescaled to accommodate actual data
+            zgcGraph.AxisChange();
+            // Force a redraw
+            zgcGraph.Invalidate();
+        }
+
+    }
+ }

@@ -1,0 +1,10 @@
+C:\Users\Rafik\Documents\Design Project\Code\heartid\graphing\bin\Debug\ConsoleApplication1.exe
+C:\Users\Rafik\Documents\Design Project\Code\heartid\graphing\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Rafik\Documents\Design Project\Code\heartid\graphing\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Rafik\Documents\Design Project\Code\heartid\graphing\obj\x86\Debug\ConsoleApplication1.exe
+C:\Users\Rafik\Documents\Design Project\Code\heartid\graphing\obj\x86\Debug\ConsoleApplication1.pdb
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\graphing\bin\Debug\ConsoleApplication1.exe
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\graphing\bin\Debug\ConsoleApplication1.pdb
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\graphing\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\graphing\obj\x86\Debug\ConsoleApplication1.exe
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\graphing\obj\x86\Debug\ConsoleApplication1.pdb

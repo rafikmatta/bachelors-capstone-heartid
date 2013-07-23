@@ -1,0 +1,68 @@
+D:\School_Work\Design_Project\heartidnew\heartid\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\School_Work\Design_Project\heartidnew\heartid\obj\x86\Debug\MainWindow.baml
+D:\School_Work\Design_Project\heartidnew\heartid\obj\x86\Debug\MainWindow.g.cs
+D:\School_Work\Design_Project\heartidnew\heartid\obj\x86\Debug\App.g.cs
+D:\School_Work\Design_Project\heartidnew\heartid\obj\x86\Debug\WpfApplication1_MarkupCompile.cache
+D:\School_Work\Design_Project\heartidnew\heartid\obj\x86\Debug\WpfApplication1.g.resources
+D:\School_Work\Design_Project\heartidnew\heartid\obj\x86\Debug\WpfApplication1.Properties.Resources.resources
+D:\School_Work\Design_Project\heartidnew\heartid\obj\x86\Debug\Heart_ID_Csharp.ZedGraphUserControl.resources
+D:\School_Work\Design_Project\heartidnew\heartid\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\School_Work\Design_Project\heartidnew\heartid\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\School_Work\Design_Project\heartidnew\heartid\bin\Debug\WpfApplication1.exe
+D:\School_Work\Design_Project\heartidnew\heartid\bin\Debug\WpfApplication1.pdb
+D:\School_Work\Design_Project\heartidnew\heartid\bin\Debug\dotnet.dll
+D:\School_Work\Design_Project\heartidnew\heartid\bin\Debug\dotnetNative.dll
+D:\School_Work\Design_Project\heartidnew\heartid\bin\Debug\ZedGraph.dll
+D:\School_Work\Design_Project\heartidnew\heartid\bin\Debug\dotnet.xml
+D:\School_Work\Design_Project\heartidnew\heartid\bin\Debug\dotnetNative.xml
+D:\School_Work\Design_Project\heartidnew\heartid\bin\Debug\ZedGraph.xml
+D:\School_Work\Design_Project\heartidnew\heartid\obj\x86\Debug\WpfApplication1.exe
+D:\School_Work\Design_Project\heartidnew\heartid\obj\x86\Debug\WpfApplication1.pdb
+C:\Users\Rafik\Documents\Design Project\Code\heartidnew\heartid\obj\x86\Debug\WpfApplication1.exe
+C:\Users\Rafik\Documents\Design Project\Code\heartidnew\heartid\obj\x86\Debug\WpfApplication1.pdb
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\bin\Debug\WpfApplication1.exe
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\bin\Debug\WpfApplication1.pdb
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\bin\Debug\dotnet.dll
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\bin\Debug\dotnetNative.dll
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\bin\Debug\ZedGraph.dll
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\bin\Debug\dotnet.xml
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\bin\Debug\dotnetNative.xml
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\bin\Debug\ZedGraph.xml
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\obj\x86\Debug\MainWindow.baml
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\obj\x86\Debug\App.g.cs
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\obj\x86\Debug\WpfApplication1_MarkupCompile.cache
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\obj\x86\Debug\WpfApplication1.g.resources
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\obj\x86\Debug\WpfApplication1.Properties.Resources.resources
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\obj\x86\Debug\WpfApplication1.exe
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\obj\x86\Debug\WpfApplication1.pdb
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\obj\x86\Debug\Browser.baml
+C:\Users\Rafik\Documents\Design Project\Code\heartid\heartid\obj\x86\Debug\Browser.g.cs
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\WpfApplication1.exe
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\WpfApplication1.pdb
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\heartid.csproj.ResolveComReference.cache
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\bin\Debug\WpfApplication1.exe
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\bin\Debug\WpfApplication1.pdb
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\bin\Debug\dotnet.dll
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\bin\Debug\dotnetNative.dll
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\bin\Debug\ZedGraph.dll
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\bin\Debug\dotnet.xml
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\bin\Debug\dotnetNative.xml
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\bin\Debug\ZedGraph.xml
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\Browser.baml
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\MainWindow.baml
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\Browser.g.cs
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\MainWindow.g.cs
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\App.g.cs
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\WpfApplication1_MarkupCompile.cache
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\WpfApplication1.g.resources
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\WpfApplication1.Properties.Resources.resources
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\ECE1518\Desktop\heartidnew\heartidnew\heartid\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Rafik\HeartID\Code\heartid\heartidnew\heartid\obj\x86\Debug\heartid.csproj.ResolveComReference.cache
+C:\Users\Rafik\HeartID\Code\heartid\heartidnew\heartid\obj\x86\Debug\WpfApplication1.exe
+C:\Users\Rafik\HeartID\Code\heartid\heartidnew\heartid\obj\x86\Debug\WpfApplication1.pdb

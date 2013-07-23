@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/44/trunk/heartid
+END
+heartid.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/44/trunk/heartid/heartid.csproj
+END
+ZedGraph.Web.XML
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/31/trunk/heartid/ZedGraph.Web.XML
+END
+build.log
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/43/trunk/heartid/build.log
+END
+App.xaml
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/24/trunk/heartid/App.xaml
+END
+ZedGraphUserControl.resx
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/24/trunk/heartid/ZedGraphUserControl.resx
+END
+App.xaml.cs
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/24/trunk/heartid/App.xaml.cs
+END
+heartid.suo
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/33/trunk/heartid/heartid.suo
+END
+dotnetclass.cs
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/43/trunk/heartid/dotnetclass.cs
+END
+comm_manager.cs
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/40/trunk/heartid/comm_manager.cs
+END
+algorithm.cs
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/43/trunk/heartid/algorithm.cs
+END
+MWArray.dll
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/31/trunk/heartid/MWArray.dll
+END
+dotnet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/43/trunk/heartid/dotnet.xml
+END
+dotnetclassNative.cs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/43/trunk/heartid/dotnetclassNative.cs
+END
+SplashScreen1.png
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/38/trunk/heartid/SplashScreen1.png
+END
+ZedGraph.XML
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/31/trunk/heartid/ZedGraph.XML
+END
+Graphing.cs
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/44/trunk/heartid/Graphing.cs
+END
+ZedGraphUserControl.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/24/trunk/heartid/ZedGraphUserControl.Designer.cs
+END
+dotnet.dll
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/43/trunk/heartid/dotnet.dll
+END
+ZedGraphUserControl.cs
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/24/trunk/heartid/ZedGraphUserControl.cs
+END
+MainWindow.xaml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/43/trunk/heartid/MainWindow.xaml
+END
+DataProcess.cs
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/44/trunk/heartid/DataProcess.cs
+END
+logo.bmp
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/24/trunk/heartid/logo.bmp
+END
+MainWindow.xaml.cs
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/44/trunk/heartid/MainWindow.xaml.cs
+END
+mccExcludedFiles.log
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/31/trunk/heartid/mccExcludedFiles.log
+END
+ManagedCPPAPI.netmodule
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/31/trunk/heartid/ManagedCPPAPI.netmodule
+END
+dotnet.prj
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/43/trunk/heartid/dotnet.prj
+END
+ZedGraph.Web.dll
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/31/trunk/heartid/ZedGraph.Web.dll
+END
+ecg1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/31/trunk/heartid/ecg1.txt
+END
+ecg2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/31/trunk/heartid/ecg2.txt
+END
+dotnet_mcc_component_data.cs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/43/trunk/heartid/dotnet_mcc_component_data.cs
+END
+ecg3.txt
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/31/trunk/heartid/ecg3.txt
+END
+ecg4.txt
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/31/trunk/heartid/ecg4.txt
+END
+ecg5.txt
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/31/trunk/heartid/ecg5.txt
+END
+MainWindow.xaml2.cs
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/31/trunk/heartid/MainWindow.xaml2.cs
+END
+Interop.MLApp.dll
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/31/trunk/heartid/Interop.MLApp.dll
+END
+dotnetNative.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/43/trunk/heartid/dotnetNative.xml
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/31/trunk/heartid/readme.txt
+END
+ZedGraph.dll
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/31/trunk/heartid/ZedGraph.dll
+END
+dotnetNative.dll
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/43/trunk/heartid/dotnetNative.dll
+END
